@@ -1,0 +1,309 @@
+@media (max-width: 992px) {
+  /* Tablet */
+
+  /* ================================================================== */
+  /* Header / Navbar */
+  .navbar {
+    padding: 0 20px;
+    gap: 10px;
+  }
+
+  .navbar-container {
+    justify-content: flex-end;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    /* height: calc(100vh - 100px); */
+    gap: 60px;
+    padding: 50px 0;
+    position: absolute;
+    top: 100px;
+    left: 70%;
+    background: #121314;
+    border-left: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    animation: changeBorderColor 5s linear infinite;
+    border-radius: 0 0 0 40px;
+    z-index: 2;
+  }
+
+  .nav-link {
+    font-size: 16px;
+  }
+
+  .menu-label {
+    display: block;
+  }
+
+  #toggle-menu:checked ~ .nav-links {
+    display: flex;
+  }
+
+  #toggle-menu:checked ~ .blur-overlay {
+    display: flex;
+  }
+
+  .open-menu {
+    display: flex;
+  }
+
+  /* Oculta el icono central del navbar */
+  .ocultar {
+    display: none;
+  }
+
+  /* Muestra el icono del navbar en el lado izquiedo */
+  .mostrar {
+    display: flex;
+  }
+
+  /* =========================================================================== */
+  /* Portada / Hero */
+  .portada-info {
+    max-width: 900px;
+  }
+
+  .slider {
+    display: none;
+  }
+
+  .portada-text {
+    width: 60%;
+  }
+
+  /* Seccion About Us */
+  .about-info {
+    max-width: 900px;
+    width: 100%;
+    gap: 10px;
+  }
+
+  /* Seccion Products */
+  .sponsor-img {
+    width: 70px;
+  }
+
+  /* Seccion Contact Us */
+
+  .contact-info-container {
+    max-width: 900px;
+    height: 400px;
+  }
+
+  .left-side {
+    width: 35%;
+  }
+
+  .left-side-img {
+    width: 200px;
+  }
+
+  .mid-side {
+    width: 30%;
+  }
+
+  .right-side {
+    width: 35%;
+  }
+
+  .mapa {
+    width: 250px;
+    height: 150px;
+    border: 2px solid black;
+  }
+
+  /* Seccion Footer */
+  .footer-info-container {
+    width: 80%;
+    padding-left: 20%;
+  }
+
+  .footer-text {
+    font-size: 15px;
+  }
+
+  .redes-sociales {
+    width: 20%;
+  }
+
+  .redes-icons {
+    width: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Mobile */
+
+  /* Navbar - Carrito */
+  .cart {
+    width: 100%;
+  }
+
+  /* ======================================== */
+  /* Portada */
+
+  .portada-info {
+    max-width: 570px;
+    width: 90%;
+  }
+
+  .portada-text {
+    width: 85%;
+  }
+
+  .portada-bottom {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ======================================== */
+  /* About-us */
+
+  #about-us {
+    height: 1200px;
+  }
+
+  .about-info {
+    gap: 40px;
+  }
+
+  .about-title {
+    font-size: 24px;
+  }
+
+  .about-text {
+    font-size: 16px;
+  }
+
+  .card-img {
+    width: 90px;
+  }
+
+  .card span {
+    font-size: 16px;
+  }
+
+  .card-text {
+    font-size: 15px;
+  }
+
+  /* ========================================== */
+  /* Products */
+
+  #products {
+    height: 850px;
+    padding-top: 200px;
+    justify-content: unset;
+    position: relative;
+  }
+
+  .products-info {
+    height: 55%;
+  }
+
+  .products-card-container {
+    padding: 20px;
+  }
+
+  .product-card-img {
+    width: 150px;
+  }
+
+  .hide-card {
+    display: none;
+  }
+
+  .product-info-bottom {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+
+  .product-info-text {
+    width: 90%;
+  }
+
+  .sponsors-info {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .sponsors-logos {
+    gap: 20px;
+    padding: 0;
+  }
+
+  .sponsors-info-title {
+    font-size: 16px;
+  }
+
+  .sponsor-img {
+    width: 50px;
+  }
+
+  /* ======================================= */
+  /* Contacto */
+
+  .contact-info-container {
+    gap: 0;
+  }
+
+  .left-side {
+    width: 45%;
+  }
+
+  .left-side-img {
+    width: 200px;
+  }
+
+  .left-side span {
+    font-size: 14px;
+  }
+
+  .mid-side {
+    width: 55%;
+    padding: 10px;
+  }
+
+  .mid-side span {
+    text-align: center;
+  }
+
+  .contact-text {
+    font-size: 14px;
+  }
+
+  .contact-list-img {
+    width: 25px;
+  }
+
+  .right-side {
+    display: none;
+    width: 0;
+  }
+
+  /* =========================================== */
+  /* Footer */
+  .footer-info-container {
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .footer-links {
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .footer-text {
+    font-size: 11px;
+  }
+
+  .redes-sociales {
+    display: none;
+  }
+}

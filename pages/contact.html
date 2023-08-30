@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HardTuc Store - Contacto</title>
+    <link rel="stylesheet" href="../css/contact.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../css/mediaqueries.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-left-side">
+        <img
+          src="../assets/img/navbar/logo-navbar.png"
+          alt="navba logo"
+          width="120px"
+        />
+        <a class="return-btn" href="../#">Volver a Inicio</a>
+      </div>
+
+      <div class="navbar-right-side">
+        <h1 class="portada-title animation">HARDTUC</h1>
+        <h2 class="portada-subtitle">HARDWARE STORE</h2>
+      </div>
+    </header>
+
+    <main class="main-container">
+      <section id="contact-section">
+        <h2 class="contact-section-title">
+          DEJANOS UN MENSAJE Y NOS COMUNICAREMOS A LA BREVEDAD
+        </h2>
+        <form class="form-container" id="contact-form" novalidate>
+          <div class="section1">
+            <div class="name form_field">
+              <input class="name-input" id="name" type="text" placeholder="Nombre" autocomplete="off" />
+              <span class="name-msg msg"></span>
+            </div>
+
+            <div class="lastname form_field">
+              <input
+                class="lastname-input"
+                id="lastName"
+                type="text"
+                placeholder="Apellido"
+                autocomplete="off"
+              />
+              <span class="lastname-msg msg"></span>
+            </div>
+          </div>
+
+          <div class="email form_field">
+            <input class="email-input" id="email" type="email" placeholder="Email" autocomplete="off" />
+            <span class="email-msg msg"></span>
+          </div>
+
+          <div class="asunto form_field">
+            <input class="asunto-input" id="asunto" type="text" placeholder="Asunto" autocomplete="off" />
+            <span class="asunto-msg msg"></span>
+          </div>
+
+          <div class="textarea form_field">
+            <textarea
+              class="textarea-input"
+              name="message"
+              id="message"
+              cols="30"
+              rows="6"
+              placeholder="Mensaje"
+              autocomplete="off"
+            ></textarea>
+            <span class="textarea-msg msg"></span>
+          </div>
+          <input class="submit-btn" type="submit" value="Enviar Ticket" />
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-info-container">
+        <ul class="footer-links">
+          <li><a class="footer-link" href="#">Preguntas Frecuentes</a></li>
+          <li><a class="footer-link" href="#">Terminos y Condiciones</a></li>
+          <li><a class="footer-link" href="#">Trabaja con nosotros!</a></li>
+        </ul>
+        <p class="footer-text">
+          Las marcas y logos de <span>hardtucstore.com</span> son propiedad de
+          HardTuc Hardware SRL.
+        </p>
+        <p class="footer-text">
+          HardTuc Hardware Store &copy; 2023 - Todos los derechos reservados.
+        </p>
+      </div>
+      <div class="redes-sociales">
+        <img
+          class="redes-icons"
+          src="../assets/img/contact-us/icons/instagram.png"
+          alt="Instagram Logo"
+        />
+        <img
+          class="redes-icons"
+          src="../assets/img/contact-us/icons/twitter.png"
+          alt="Twitter Logo"
+        />
+      </div>
+    </footer>
+
+    <script src="../data/contact.js"></script>
+  </body>
+</html>

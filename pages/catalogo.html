@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HardTuc Store - Productos</title>
+    
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../css/catalogo.css" />
+    <link rel="stylesheet" href="../css/mediaqueries.css">
+    
+  </head>
+  <body>
+    <header class="navbar">
+      <img
+        class="nav-logo mostrar"
+        src="../assets/img/navbar/logo-navbar.png"
+        alt="Navbar logo"
+      />
+      <nav class="navbar-container">
+        <!-- Menu Hamburguesa -->
+        <label class="menu-label" for="toggle-menu"
+          ><img class="menu-icon" src="../assets/img/navbar/menu-icon.png"
+        /></label>
+        <input type="checkbox" id="toggle-menu" />
+        <!-- ==================================================== -->
+        <!-- Navbar -->
+        <ul class="nav-links">
+          <li><a class="nav-link" href="../#">Inicio</a></li>
+          <li><a class="nav-link" href="#about-us">Empresa</a></li>
+          <li class="ocultar">
+            <img
+              class="nav-logo"
+              src="../assets/img/navbar/logo-navbar.png"
+              alt="Navbar logo"
+            />
+          </li>
+          <li><a class="nav-link" href="#products">Productos</a></li>
+          <li><a class="nav-link" href="#contact-us">Contacto</a></li>
+        </ul>
+        <!-- ======================================================== -->
+        <!-- Carrito / Cart -->
+        <label class="cart-label" for="toggle-cart"
+          ><img
+            class="cart-icon"
+            src="../assets/img/navbar/cart-icon.png"
+            alt="Cart Icon"
+        /> <div class="cart-items-counter">0</div> </label>
+        <input type="checkbox" id="toggle-cart" />
+
+        <div class="cart">
+          <h2>CARRITO</h2>
+          <div class="cart-container">
+            <!-- Item -->
+          <div class="cart-item">
+            <img
+              src="../assets/img/products/cards-img/grafica.png"
+              alt="Cart item icon"
+            />
+            <div class="item-info">
+              <h3 class="item-title">Tarjeta Grafica Nvidia RTX 4070</h3>
+              <span class="item-price">Precio: 4.8 ETH</span>
+            </div>
+
+            <div class="item-counter">
+              <span class="quantity-handler down">-</span>
+              <span class="item-quantity">1</span>
+              <span class="quantity-handler up">+ </span>
+            </div>
+          </div>
+          </div>
+
+
+          <hr class="divider" />
+          <div class="cart-total">
+            <p>Total:</p>
+            <span>18.3 ETH</span>
+          </div>
+          <button class="pay-btn">Comprar</button>
+          <button class="clear-btn">Vaciar Carrito</button>
+        </div>
+
+        <div class="blur-overlay"></div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <!-- <section class="left-side-container">
+        <div class="text-container">
+          <p>PRODUCTOS</p>
+        </div>
+
+        <div class="filter-buttons">
+          <button class="filter-btn">Todo</button>
+          <button class="filter-btn">Procesadores</button>
+          <button class="filter-btn">Motherboards</button>
+          <button class="filter-btn">Placas de Video</button>
+          <button class="filter-btn">Memorias Ram</button>
+          <button class="filter-btn">Almacenamiento</button>
+          <button class="filter-btn">Fuentes de Alimentacion</button>
+        </div>
+      </section> -->
+
+      <section class="render-products-section">
+        <div class="filter-buttons">
+          <button class="filter-btn active">Todo</button>
+          <button class="filter-btn">Procesadores</button>
+          <button class="filter-btn">Motherboards</button>
+          <button class="filter-btn">Placas de Video</button>
+          <button class="filter-btn">Memorias Ram</button>
+          <button class="filter-btn">Almacenamiento</button>
+          <button class="filter-btn">Fuentes de Alimentacion</button>
+        </div>
+        <div class="render-all">
+          <!-- <div class="product-card">
+            <img
+              class="product-card-img"
+              src="../assets/img/products/cards-img/mb-giga.png"
+              alt="Imagen de Motherboard"
+            />
+            <div class="product-card-info">
+              <p class="card-title">GIGABYTE B650 AERO (AMD)</p>
+              <span class="card-price">$435.000</span>
+            </div>
+            <button class="add-to-cart-btn">
+              AGREGAR<img
+                class="add-btn-img"
+                src="../assets/img/products/cards-img/add.png"
+                alt="cart icon"
+              />
+            </button>
+          </div>
+
+          <div class="product-card">
+            <img
+              class="product-card-img"
+              src="../assets/img/products/cards-img/mb-giga.png"
+              alt="Imagen de Motherboard"
+            />
+            <div class="product-card-info">
+              <p class="card-title">GIGABYTE B650 AERO (AMD)</p>
+              <span class="card-price">$435.000</span>
+            </div>
+            <button class="add-to-cart-btn">
+              AGREGAR<img
+                class="add-btn-img"
+                src="../assets/img/products/cards-img/add.png"
+                alt="cart icon"
+              />
+            </button>
+          </div>
+
+          <div class="product-card">
+            <img
+              class="product-card-img"
+              src="../assets/img/products/cards-img/mb-giga.png"
+              alt="Imagen de Motherboard"
+            />
+            <div class="product-card-info">
+              <p class="card-title">GIGABYTE B650 AERO (AMD)</p>
+              <span class="card-price">$435.000</span>
+            </div>
+            <button class="add-to-cart-btn">
+              AGREGAR<img
+                class="add-btn-img"
+                src="../assets/img/products/cards-img/add.png"
+                alt="cart icon"
+              />
+            </button>
+          </div>
+
+          <div class="product-card">
+            <img
+              class="product-card-img"
+              src="../assets/img/products/cards-img/mb-giga.png"
+              alt="Imagen de Motherboard"
+            />
+            <div class="product-card-info">
+              <p class="card-title">GIGABYTE B650 AERO (AMD)</p>
+              <span class="card-price">$435.000</span>
+            </div>
+            <button class="add-to-cart-btn">
+              AGREGAR<img
+                class="add-btn-img"
+                src="../assets/img/products/cards-img/add.png"
+                alt="cart icon"
+              />
+            </button>
+          </div>
+
+          <div class="product-card">
+            <img
+              class="product-card-img"
+              src="../assets/img/products/cards-img/mb-giga.png"
+              alt="Imagen de Motherboard"
+            />
+            <div class="product-card-info">
+              <p class="card-title">GIGABYTE B650 AERO (AMD)</p>
+              <span class="card-price">$435.000</span>
+            </div>
+            <button class="add-to-cart-btn">
+              AGREGAR<img
+                class="add-btn-img"
+                src="../assets/img/products/cards-img/add.png"
+                alt="cart icon"
+              />
+            </button>
+          </div>
+
+          <div class="product-card">
+            <img
+              class="product-card-img"
+              src="../assets/img/products/cards-img/mb-giga.png"
+              alt="Imagen de Motherboard"
+            />
+            <div class="product-card-info">
+              <p class="card-title">GIGABYTE B650 AERO (AMD)</p>
+              <span class="card-price">$435.000</span>
+            </div>
+            <button class="add-to-cart-btn">
+              AGREGAR<img
+                class="add-btn-img"
+                src="../assets/img/products/cards-img/add.png"
+                alt="cart icon"
+              />
+            </button>
+          </div>
+
+          <div class="product-card">
+            <img
+              class="product-card-img"
+              src="../assets/img/products/cards-img/mb-giga.png"
+              alt="Imagen de Motherboard"
+            />
+            <div class="product-card-info">
+              <p class="card-title">GIGABYTE B650 AERO (AMD)</p>
+              <span class="card-price">$435.000</span>
+            </div>
+            <button class="add-to-cart-btn">
+              AGREGAR<img
+                class="add-btn-img"
+                src="../assets/img/products/cards-img/add.png"
+                alt="cart icon"
+              />
+            </button>
+          </div>
+
+          <div class="product-card">
+            <img
+              class="product-card-img"
+              src="../assets/img/products/cards-img/mb-giga.png"
+              alt="Imagen de Motherboard"
+            />
+            <div class="product-card-info">
+              <p class="card-title">GIGABYTE B650 AERO (AMD)</p>
+              <span class="card-price">$435.000</span>
+            </div>
+            <button class="add-to-cart-btn">
+              AGREGAR<img
+                class="add-btn-img"
+                src="../assets/img/products/cards-img/add.png"
+                alt="cart icon"
+              />
+            </button>
+          </div> -->
+
+        </div>
+
+        <button class="btn-showmore">Ver Más</button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-info-container">
+        <ul class="footer-links">
+          <li><a class="footer-link" href="#">Preguntas Frecuentes</a></li>
+          <li><a class="footer-link" href="#">Terminos y Condiciones</a></li>
+          <li><a class="footer-link" href="#">Trabaja con nosotros!</a></li>
+        </ul>
+        <p class="footer-text">
+          Las marcas y logos de <span>hardtucstore.com</span> son propiedad de
+          HardTuc Hardware SRL.
+        </p>
+        <p class="footer-text">
+          HardTuc Hardware Store &copy; 2023 - Todos los derechos reservados.
+        </p>
+      </div>
+      <div class="redes-sociales">
+        <img
+          class="redes-icons"
+          src="../assets/img/contact-us/icons/instagram.png"
+          alt="Instagram Logo"
+        />
+        <img
+          class="redes-icons"
+          src="../assets/img/contact-us/icons/twitter.png"
+          alt="Twitter Logo"
+        />
+      </div>
+    </footer>
+    <script src="../data/db.js"></script>
+    <script src="../data/index.js"></script>
+  </body>
+</html>

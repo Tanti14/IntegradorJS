@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HardTuc Store</title>
+    <link rel="icon" href="./assets/img/navbar/logo-navbar.png">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/mediaqueries.css" />
+  </head>
+  <body>
+    <!-- Navbar section -->
+    <header class="navbar">
+      <img
+        class="nav-logo mostrar"
+        src="./assets/img/navbar/logo-navbar.png"
+        alt="Navbar logo"
+      />
+      <nav class="navbar-container">
+        <!-- Menu Hamburguesa -->
+        <label class="menu-label" for="toggle-menu"
+          ><img class="menu-icon" src="./assets/img/navbar/menu-icon.png"
+        /></label>
+        <input type="checkbox" id="toggle-menu" />
+        <!-- ==================================================== -->
+        <!-- Navbar -->
+        <ul class="nav-links">
+          <li><a class="nav-link" href="#">Inicio</a></li>
+          <li><a class="nav-link" href="#about-us">Empresa</a></li>
+          <li class="ocultar">
+            <img
+              class="nav-logo"
+              src="./assets/img/navbar/logo-navbar.png"
+              alt="Navbar logo"
+            />
+          </li>
+          <li><a class="nav-link" href="#products">Productos</a></li>
+          <li><a class="nav-link" href="#contact-us">Contacto</a></li>
+        </ul>
+        <!-- ======================================================== -->
+        <!-- Carrito / Cart -->
+        <label class="cart-label" for="toggle-cart"
+          ><img
+            class="cart-icon"
+            src="./assets/img/navbar/cart-icon.png"
+            alt="Cart Icon"
+        /> <div class="cart-items-counter">0</div> </label>
+        <input type="checkbox" id="toggle-cart" />
+
+        <div class="cart">
+          <h2>CARRITO</h2>
+          <div class="cart-container">
+            <!-- Item -->
+          <!-- <div class="cart-item">
+            <img
+              src="./assets/img/products/cards-img/grafica.png"
+              alt="Cart item icon"
+            />
+            <div class="item-info">
+              <h3 class="item-title">Tarjeta Grafica Nvidia RTX 4070</h3>
+              <span class="item-price">Precio: 4.8 ETH</span>
+            </div>
+
+            <div class="item-counter">
+              <span class="quantity-handler down">-</span>
+              <span class="item-quantity">1</span>
+              <span class="quantity-handler up">+ </span>
+            </div>
+          </div> -->
+
+          
+          </div>
+
+
+          <hr class="divider" />
+          <div class="cart-total">
+            <p>Total:</p>
+            <span class="total-price">18.3 ETH</span>
+          </div>
+          <button class="pay-btn">Comprar</button>
+          <button class="clear-btn">Vaciar Carrito</button>
+        </div>
+
+        <div class="blur-overlay"></div>
+      </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main class="main-container">
+      <!-- Hero / Portada -->
+      <section id="portada">
+        <div class="portada-info">
+          <div class="slider">
+            <div class="images">
+              <img src="./assets/img/portada/1.jpg" alt="" />
+              <img src="./assets/img/portada/2.jpg" alt="" />
+              <img src="./assets/img/portada/3.jpg" alt="" />
+              <img src="./assets/img/portada/4.jpg" alt="" />
+              <img src="./assets/img/portada/5.jpg" alt="" />
+              <img src="./assets/img/portada/6.jpg" alt="" />
+              <img src="./assets/img/portada/7.jpg" alt="" />
+            </div>
+          </div>
+          <div class="portada-text">
+            <div class="portada-top">
+              <h1 class="portada-title animation">HARDTUC</h1>
+              <h2 class="portada-subtitle">HARDWARE STORE</h2>
+            </div>
+            <div class="portada-bottom">
+              <p class="portada-bottom-text">
+                Bienvenidos a HardTuc, el mejor local de Hardware de Argentina,
+                donde encontraras las mejores marcas y los mejores componentes
+                para armar la computadora de tus sueños y sobre todo, al mejor
+                precio del mercado. Asesorate con nosotros, sabemos lo que
+                hacemos!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us -->
+      <section id="about-us">
+        <div class="about-info">
+          <div class="about-info-top">
+            <h2 class="about-title">¡Bienvenidos a HardTuc!</h2>
+            <p class="about-text">
+              En HardTuc, nos enorgullecemos de ser mucho más que una tienda de
+              hardware. Somos un equipo apasionado de entusiastas de la
+              tecnología, dedicados a brindarte soluciones de hardware de
+              vanguardia con un toque personalizado. Desde los aficionados
+              apasionados hasta los profesionales expertos, todos encontrarán en
+              nuestro espacio un lugar para explorar, aprender y satisfacer sus
+              necesidades tecnológicas.
+            </p>
+          </div>
+
+          <div class="about-info-bottom">
+            <h2 class="about-title">¿Por que elegirnos?</h2>
+            <div class="card-container">
+              <div class="card">
+                <img
+                  class="card-img"
+                  src="./assets/img/about-us/asistente.png"
+                  alt=""
+                />
+                <span>Atencion Personalizada</span>
+              </div>
+              <div class="card-text-container">
+                <p class="card-text">
+                  Contamos con personal de Atencion al cliente altamente
+                  capacitado en el rubro para ofrecerte una Atencion
+                  Personalizada acorde a tus necesidades. Nuestra experiencia en
+                  el campo nos permite ofrecerte asesoramiento experto para que
+                  tomes decisiones informadas y obtengas el hardware perfecto
+                  para tus proyectos y objetivos.
+                </p>
+              </div>
+            </div>
+
+            <div class="card-container">
+              <div class="card">
+                <img
+                  class="card-img"
+                  src="./assets/img/about-us/etiqueta-dinero.png"
+                  alt=""
+                />
+                <span>El mejor precio del mercado!</span>
+              </div>
+              <div class="card-text-container">
+                <p class="card-text">
+                  Para nosotros, tu satisfacción y tu bolsillo son nuestra
+                  prioridad número uno, por eso, nuestro compromiso en HardTuc
+                  es brindarte la mejor relación calidad-precio en un mercado
+                  afectado por la inflación, para que puedas obtener productos a
+                  precios accesibles sin sacrificar la calidad.
+                </p>
+              </div>
+            </div>
+
+            <div class="card-container">
+              <div class="card">
+                <img
+                  class="card-img"
+                  src="./assets/img/about-us/entrega.png"
+                  alt=""
+                />
+                <span>Envio GRATIS a domicilio</span>
+              </div>
+              <div class="card-text-container">
+                <p class="card-text">
+                  Tu Comodidad, Nuestra Prioridad. Es por eso que ofrecemos
+                  envío gratuito para brindarte una experiencia de compra sin
+                  complicaciones ni costos adicionales.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products Section -->
+      <section id="products">
+        <div class="products-info">
+          <h2 class="products-info-title">- PRODUCTOS DESTACADOS -</h2>
+
+          <div class="products-card-container">
+            <!-- <div class="product-card">
+              <img
+                class="product-card-img"
+                src="./assets/img/products/cards-img/mb-giga.png"
+                alt="Imagen de Motherboard"
+              />
+              <div class="product-card-info">
+                <p class="card-title">GIGABYTE B650 AERO (AMD)</p>
+                <span class="card-price">$435.000</span>
+              </div>
+              <button class="add-to-cart-btn">
+                AGREGAR<img
+                  class="add-btn-img"
+                  src="./assets/img/products/cards-img/add.png"
+                  alt="cart icon"
+                />
+              </button>
+            </div>
+
+            <div class="product-card">
+              <img
+                class="product-card-img"
+                src="./assets/img/products/cards-img/grafica.png"
+                alt="Imagen de Tarjeta Grafica"
+              />
+              <div class="product-card-info">
+                <p class="card-title">ASUS NVIDIA RTX 4070 12GB</p>
+                <span class="card-price">$525.470</span>
+              </div>
+              <button class="add-to-cart-btn">
+                AGREGAR<img
+                  class="add-btn-img"
+                  src="./assets/img/products/cards-img/add.png"
+                  alt="cart icon"
+                />
+              </button>
+            </div>
+
+            <div class="product-card hide-card">
+              <img
+                class="product-card-img"
+                src="./assets/img/products/cards-img/perifericos.png"
+                alt="Imagen de Perifericos"
+              />
+              <div class="product-card-info">
+                <p class="card-title">KIT GAMER LOGITECH</p>
+                <span class="card-price">$45.728</span>
+              </div>
+              <button class="add-to-cart-btn">
+                AGREGAR<img
+                  class="add-btn-img"
+                  src="./assets/img/products/cards-img/add.png"
+                  alt="cart icon"
+                />
+              </button>
+            </div> -->
+          </div>
+          <div class="product-info-bottom">
+            <a class="catalogo-btn" href="./pages/catalogo.html"
+              >MIRA NUESTRO CATALOGO
+              <img
+                class="catalogo-btn-img"
+                src="./assets/img/products/flecha-izq.png"
+            /></a>
+            <p class="product-info-text">
+              En HardTuc, encontrarás una extensa variedad de componentes,
+              dispositivos y accesorios cuidadosamente seleccionados, todos
+              respaldados por las marcas líderes en la industria. Estamos aquí
+              para ayudarte a llevar tus ideas al siguiente nivel.
+            </p>
+          </div>
+        </div>
+
+        <div class="sponsors-info">
+          <h2 class="sponsors-info-title">
+            TRABAJAMOS CON LAS MARCAS LÍDERES EN LA INDUSTRIA DEL GAMING
+          </h2>
+          <div class="sponsors-logos">
+            <img
+              class="sponsor-img"
+              src="./assets/img/products/sponsors-logo/Coolermaster-logo.png"
+              alt=""
+            />
+            <img
+              class="sponsor-img"
+              src="./assets/img/products/sponsors-logo/HyperX-logo.png"
+              alt=""
+            />
+            <img
+              class="sponsor-img"
+              src="./assets/img/products/sponsors-logo/amd-logo.png"
+              alt=""
+            />
+            <img
+              class="sponsor-img"
+              src="./assets/img/products/sponsors-logo/logitech-logo.png"
+              alt=""
+            />
+            <img
+              class="sponsor-img"
+              src="./assets/img/products/sponsors-logo/Intel-logo.png"
+              alt=""
+            />
+            <img
+              class="sponsor-img"
+              src="./assets/img/products/sponsors-logo/msi-logo.png"
+              alt=""
+            />
+            <img
+              class="sponsor-img"
+              src="./assets/img/products/sponsors-logo/rog-logo.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Help/Contact Section -->
+      <section id="contact-us">
+        <h2 class="contactus-title">¿NECESITAS AYUDA?</h2>
+        <div class="contact-info-container">
+          <div class="left-side">
+            <img
+              class="left-side-img"
+              src="./assets/img/contact-us/asistencia-tel.png"
+              alt="Asistente telefonico"
+            />
+            <span>HORARIOS DE ATENCION</span>
+            <span>LUNES A VIERNES DE 09 A 18 HS</span>
+          </div>
+
+          <div class="mid-side">
+            <span>PODES COMUNICARTE POR LOS SIGUIENTES MEDIOS</span>
+            <div class="contact-list">
+              <div class="contact-direction">
+                <img
+                  class="contact-list-img"
+                  src="./assets/img/contact-us/icons/ping-mapa.png"
+                  alt=""
+                />
+                <p class="contact-text">Avenida Colon 1929</p>
+              </div>
+
+              <div class="contact-phone">
+                <img
+                  class="contact-list-img"
+                  src="./assets/img/contact-us/icons/telefono.png"
+                  alt=""
+                />
+                <p class="contact-text">+54 381 492 6624</p>
+              </div>
+
+              <div class="contact-mail">
+                <img
+                  class="contact-list-img"
+                  src="./assets/img/contact-us/icons/correo.png"
+                  alt=""
+                />
+                <p class="contact-text">atencionhardtuc@contacto.com</p>
+              </div>
+            </div>
+            <div class="separador">
+              <hr class="divisor" />
+              <p>O</p>
+              <hr class="divisor" />
+            </div>
+            <a class="create-ticket-btn" href="./pages/contact.html"
+              >CREA UN TICKET</a
+            >
+          </div>
+
+          <div class="right-side">
+            <p>San Miguel de Tucumán, Argentina</p>
+            <iframe
+              class="mapa"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.647199225779!2d-65.24252282370344!3d-26.851171390636818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225b7fc3cff931%3A0x16cb559668142ad8!2sAv.%20Col%C3%B3n%201929%2C%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n!5e0!3m2!1ses!2sar!4v1692377840992!5m2!1ses!2sar"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-info-container">
+        <ul class="footer-links">
+          <li><a class="footer-link" href="#">Preguntas Frecuentes</a></li>
+          <li><a class="footer-link" href="#">Terminos y Condiciones</a></li>
+          <li><a class="footer-link" href="#">Trabaja con nosotros!</a></li>
+        </ul>
+        <p class="footer-text">
+          Las marcas y logos de <span>hardtucstore.com</span> son propiedad de
+          HardTuc Hardware SRL.
+        </p>
+        <p class="footer-text">
+          HardTuc Hardware Store &copy; 2023 - Todos los derechos reservados.
+        </p>
+      </div>
+      <div class="redes-sociales">
+        <img
+          class="redes-icons"
+          src="./assets/img/contact-us/icons/instagram.png"
+          alt="Instagram Logo"
+        />
+        <img
+          class="redes-icons"
+          src="./assets/img/contact-us/icons/twitter.png"
+          alt="Twitter Logo"
+        />
+      </div>
+    </footer>
+
+    <script src="./data/index.js"></script>
+    <script src="./data/db.js"></script>
+    
+  </body>
+</html>
