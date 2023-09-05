@@ -29,16 +29,16 @@ const createCard = (product) => {
     <img
       class="product-card-img"
       src="${img}"
-      alt="Imagen de Motherboard"
+      alt="${productName}"
     />
     <div class="product-card-info">
       <p class="card-title">${productName}</p>
       <span class="card-price">$${precio}</span>
     </div>
-    <button class="add-to-cart-btn btn-add" data-id='${id}' data-name='${productName}' data-precio='${precio}' data-img='${img}'>
+    <button class="add-to-cart-btn" data-id='${id}' data-name='${productName}' data-precio='${precio}' data-img='${img}'>
       AGREGAR<img
         class="add-btn-img"
-        src="./assets/img/products/cards-img/add.png"
+        src="./assets/img/products/cards-img/mas.png"
         alt="cart icon"
       />
     </button>
@@ -46,7 +46,7 @@ const createCard = (product) => {
 };
 
 const renderProductCards = (productsList) => {
-  productsCardContainer.innerHTML = productsList.map(createCard).join("");
+  productsCardContainer.innerHTML += productsList.map(createCard).join(""); 
 };
 
 const isLastIndexOf = () => {
@@ -57,7 +57,7 @@ const isLastIndexOf = () => {
 const loadMoreProducts = () => {
   appState.currentIndex += 1;
   let { products, currentIndex } = appState;
-  renderPoductCards(products[currentIndex]);
+  renderProductCards(products[currentIndex]);
   if (isLastIndexOf()) {
     showMoreBtn.style.display = "none";
     // showMoreBtn.classList.add("hidden")  corroborar si se oculta el boton de la forma hecha arriba
@@ -67,26 +67,26 @@ const loadMoreProducts = () => {
 // Funcion para ocultat/mostrar el boton de ver más
 
 const toggleShowMorebtn = () => {
-  if (appState.activeFilter) {
-    showMoreBtn.style.display = "none";
+  if (!appState.activeFilter) {
+    showMoreBtn.style.display = "block";
     // showMoreBtn.classList.remove("hidden")
+    return;
   }
-  showMoreBtn.style.display = "block";
+  showMoreBtn.style.display = "none";
   // showMoreBtn.classList.add("hidden")
 };
 
+
 // Logica para los filtros
-
 // Funcion para cambiar el estado de los botones del filtro/categoria
-
 const changeBtnActiveState = (selectedCategory) => {
   const categories = [...filterButtons];
-  categories.forEach((categoyBtn) => {
-    if (categoyBtn.dataset.category != selectedCategory) {
-      categoyBtn.classList.remove("active");
+  categories.forEach((categoryBtn) => {
+    if (categoryBtn.dataset.category !== selectedCategory) {
+      categoryBtn.classList.remove("active");
       return;
     }
-    categoyBtn.classList.add("active");
+    categoryBtn.classList.add("active");
   });
 };
 
@@ -99,10 +99,10 @@ const changeFilterState = (btn) => {
 
 // Funcion para saber si el boton que se presiono es un boton de categoria y no esta activo
 
-const isInactiveFilterBtn = (btn) => {
+const isInactiveFilterBtn = (element) => {
   return (
-    btn.classList.classList.contains("category") &&
-    !btn.classList.contains("active")
+    element.classList.contains("filter-btn") &&
+    !element.classList.contains("active")
   );
 };
 
@@ -112,9 +112,8 @@ const applyFilter = (event) => {
   const { target } = event;
 
   if (!isInactiveFilterBtn(target)) return;
-
-  productsCardContainer.innerHTML = "";
-
+  productsCardContainer.innerHTML = '';
+  changeFilterState(target);
   if (appState.activeFilter) {
     renderFilteredProducts();
     appState.currentIndex = 0;
@@ -122,16 +121,16 @@ const applyFilter = (event) => {
   }
 
   /* Si no hay un filtro activo xq el usuario toco el boton de TODOS */
-  renderPoductCards(appState.products[0]);
+  renderProductCards(appState.products[0]);
 };
 
 // Funcion para filtrar los prouctos por categoria y mostrarlos / renderizarlos
 
-const rederFilteredProducts = () => {
-  const filteredProducts = productsData.filter((product) => {
-    product.categoria === appState.activeFilter;
-  });
-  renderPoductCards(filteredProducts);
+const renderFilteredProducts = () => {
+  const filteredProducts = productsData.filter((product) =>
+    product.categoria === appState.activeFilter
+  );
+  renderProductCards(filteredProducts);
 };
 
 // Funcion para mostrar/ocultar menu hamburguesa y el overlay
@@ -189,11 +188,11 @@ const closeOutsideClick = () => {
 
 // Crear card de producto en el carrito
 const createCartItemCard = (cartProduct) => {
-  const {id, productName, precio, img, cantidad} = cartProduct
-
+  const { id, productName, precio, img, cantidad } = cartProduct;
+  console.log(productName);
   return `<div class="cart-item">
   <img
-    src="${img}"
+    src='${img}'
     alt="Cart item icon"
   />
   <div class="item-info">
@@ -202,11 +201,11 @@ const createCartItemCard = (cartProduct) => {
   </div>
 
   <div class="item-counter">
-    <span class="quantity-handler down data-id=${id}">-</span>
+    <span class="quantity-handler down" data-id="${id}">-</span>
     <span class="item-quantity">${cantidad}</span>
-    <span class="quantity-handler up data-id=${id}">+</span>
+    <span class="quantity-handler up" data-id="${id}">+</span>
   </div>
-</div>`
+</div>`;
 }
 
 const renderCart = () => {
@@ -221,19 +220,19 @@ const renderCart = () => {
 // Funcion para obtener el total de la compra
 
 const sumarTotalCarrito = () => {
-  return cart.reduce((contador, productoActual) => contador + Number(productoActual.precio) * productoActual.cantidad, 0);
+  return cart.reduce((acc, current) => acc + Number(current.precio) * current.cantidad, 0);
 }
 
 // Funcion para mostrar el total de la compra
 
 const showTotal = () => {
-  totalPrice.innerHTML = `$${sumarTotalCarrito().toFixed(2)}`
+  totalPrice.innerHTML = `$${sumarTotalCarrito().toFixed(2)}`;
 }
 
 // Funcion para actualizar el numero en el icono del carrito
 
 const updateCartQuantityBubble = () => {
-  cartItemsCounter.textContent = cart.reduce((contador, actual) => contador + actual.cantidad, 0)
+  cartItemsCounter.textContent = cart.reduce((acc, current) => acc + current.cantidad, 0)
 }
 
 // Funcion para habilitar o desabilitar un boton (Cualquiera)
@@ -247,18 +246,19 @@ const disableBtn = (btn) => {
 
 // Funcion para modificar el estado del carrito  
 const updateCartState = () => {
-  saveCart()
-  renderCart()
-  disableBtn(btnComprar)
-  disableBtn(btnLimpiar)
-  updateCartQuantityBubble()
+  saveCart();
+  renderCart();
+  showTotal();
+  disableBtn(btnComprar);
+  disableBtn(btnLimpiar);
+  updateCartQuantityBubble();
 }
 
 // Funcion para crear un objeto con la informacion del producto a agregar del carrito
-const createProductData = (product) => {
-  const {id, productName, precio, img} = product
-  return id, productName, precio, img;
-}
+const createProductData = ({id, productName, precio, img}) => {
+  return {id, productName, precio, img};
+  
+};
 
 // Funcion para saber si cierto producto ya esta en el carrito
 const isProductInCart = (product) => {
@@ -288,14 +288,26 @@ const showSuccessAlert = (msg) => {
 // Funcion para crear un objeto con la informacion del producto que se agrega al carrito
 
 const addProduct = (e) => {
-  if(!e.target.classList.contains("btn-add")) return;
-  const product = createProductData(e.target.dataset)
+  if(!e.target.classList.contains("add-to-cart-btn")) return;
+  const product = createProductData(e.target.dataset);
   if(isProductInCart(product)){
     addUnitToProduct(product)
-    /* showSuccessAlert("Se agregó una unidad del producto al carrito") */
+    Swal.fire({
+      title: '¡Operacion Exitosa!',
+      text: 'SE AGREGO UNA UNIDAD MAS DE ESTE PRODUCTO',
+      icon: 'success',
+      showConfirmButton: false,
+      timer: 2000
+    });
   }else {
     createCartProduct(product)
-    showSuccessAlert("El producto se agregó al carrito")
+    Swal.fire({
+      title: '¡Operacion Exitosa!',
+      text: 'SE AGREGÓ EL PRODUCTO AL CARRITO',
+      icon: 'success',
+      showConfirmButton: false,
+      timer: 2000
+    });
   }
   updateCartState()
 };
@@ -309,6 +321,7 @@ const handlePlusBtnEvent = (id) => {
 // Funcion para restar un producto desde el carrito
 const handleMinusBtnEvent = (id) => {
   const existingCartProduct = cart.find((item) => item.id === id)
+
   if(existingCartProduct.cantidad === 1){
     if(window.confirm("Desea eliminar el producto del carrito?")){
       removeProductFromCart(existingCartProduct)
@@ -345,41 +358,64 @@ const handleQuantity = (e) => {
 }
 
 //Funcion para vaciar el carrito 
-    //resetCartItems
+//resetCartItems
 const resetCart = () => {
   cart = [] 
   updateCartState()
 }
 
 // Funcion para completar la compra o vaciar el carrito
-const completeCartAction = (confirmMsg, successMsg) => {
+const completeCartAction = (warnMsg, warnTxt,btnTxt, successMsg, confirmTxt) => {
   if(!cart.length) return;
-  if(window.confirm(confirmMsg)){
+  /* if(window.confirm(confirmMsg)){
     resetCart()
     alert(successMsg)
-  }
+  } */
+
+  Swal.fire({
+    title: warnMsg,
+    text: warnTxt,
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: btnTxt,
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      resetCart()
+      Swal.fire({
+        title: successMsg,
+        text: confirmTxt,
+        icon: 'success',
+        showConfirmButton: false,
+        timer: 2000
+    })
+    if(cartList.classList.contains('open-cart')){
+      cartList.classList.remove('open-cart')
+      blurOverlay.classList.remove('show-overlay')
+    }
+    }
+  })
 }
 
 // Funcion para disparar el mensaje de compra exitosa
 const completeBuy = () => {
-  completeCartAction("Desea finalizar la compra?", "Gracias por su compra!")
+  completeCartAction("¿Desea finalizar la compra?","Esta a punto de finalizar la compra, ¿Que desea hacer?", "Finalizar", "Gracias por su compra!", "Hemos recibido su pedido. Enviaremos todos los detalles por correo")
 }
 
 // Funcion para disparar el mensaje de vaciado exitoso de carrito
 const deleteCart = () => {
-  completeCartAction("Desea vaciar el carrito?", "No hay items en el carrito")
+  completeCartAction("¿Desea vaciar el carrito?","Esta accion no se puede revertir", "Vaciar", "¡Operacion Exitosa!", "El carrito se ha vaciado correctamente")
 }
 
 const init = () => {
   renderProductCards(appState.products[0])
- /*  catalogoRenderAll(appState.products[0]) */
   showMoreBtn.addEventListener("click", loadMoreProducts)
   filterBtnContainer.addEventListener("click", applyFilter)
   cartBtn.addEventListener("click", toggleCart)
   menuBtn.addEventListener("click", toggleMenu)
   window.addEventListener("scroll", closeOnScroll)
   menuList.addEventListener("click", closeOnClick)
-  /* cartList.addEventListener("click", closeOnClick) */
   blurOverlay.addEventListener("click", closeOutsideClick)
   document.addEventListener("DOMContentLoaded", renderCart)
   document.addEventListener("DOMContentLoaded", showTotal)
@@ -392,4 +428,4 @@ const init = () => {
   updateCartQuantityBubble(cart)
 }
 
-init();
+init()

@@ -40,14 +40,6 @@
     display: block;
   }
 
-  #toggle-menu:checked ~ .nav-links {
-    display: flex;
-  }
-
-  #toggle-menu:checked ~ .blur-overlay {
-    display: flex;
-  }
-
   .open-menu {
     display: flex;
   }

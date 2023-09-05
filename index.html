@@ -7,6 +7,7 @@
     <link rel="icon" href="./assets/img/navbar/logo-navbar.png">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./css/mediaqueries.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <!-- Navbar section -->
@@ -50,35 +51,17 @@
         <div class="cart">
           <h2>CARRITO</h2>
           <div class="cart-container">
-            <!-- Item -->
-          <!-- <div class="cart-item">
-            <img
-              src="./assets/img/products/cards-img/grafica.png"
-              alt="Cart item icon"
-            />
-            <div class="item-info">
-              <h3 class="item-title">Tarjeta Grafica Nvidia RTX 4070</h3>
-              <span class="item-price">Precio: 4.8 ETH</span>
-            </div>
-
-            <div class="item-counter">
-              <span class="quantity-handler down">-</span>
-              <span class="item-quantity">1</span>
-              <span class="quantity-handler up">+ </span>
-            </div>
-          </div> -->
-
-          
+            <!-- Aqui se mostraran los productos agregados al carrito -->      
           </div>
-
-
           <hr class="divider" />
           <div class="cart-total">
             <p>Total:</p>
-            <span class="total-price">18.3 ETH</span>
+            <span class="total-price"></span>
           </div>
-          <button class="pay-btn">Comprar</button>
+          <div class="cart-buttons">
+            <button class="pay-btn">Comprar</button>
           <button class="clear-btn">Vaciar Carrito</button>
+          </div>
         </div>
 
         <div class="blur-overlay"></div>
@@ -202,67 +185,22 @@
       <!-- Products Section -->
       <section id="products">
         <div class="products-info">
-          <h2 class="products-info-title">- PRODUCTOS DESTACADOS -</h2>
-
-          <div class="products-card-container">
-            <!-- <div class="product-card">
-              <img
-                class="product-card-img"
-                src="./assets/img/products/cards-img/mb-giga.png"
-                alt="Imagen de Motherboard"
-              />
-              <div class="product-card-info">
-                <p class="card-title">GIGABYTE B650 AERO (AMD)</p>
-                <span class="card-price">$435.000</span>
-              </div>
-              <button class="add-to-cart-btn">
-                AGREGAR<img
-                  class="add-btn-img"
-                  src="./assets/img/products/cards-img/add.png"
-                  alt="cart icon"
-                />
-              </button>
-            </div>
-
-            <div class="product-card">
-              <img
-                class="product-card-img"
-                src="./assets/img/products/cards-img/grafica.png"
-                alt="Imagen de Tarjeta Grafica"
-              />
-              <div class="product-card-info">
-                <p class="card-title">ASUS NVIDIA RTX 4070 12GB</p>
-                <span class="card-price">$525.470</span>
-              </div>
-              <button class="add-to-cart-btn">
-                AGREGAR<img
-                  class="add-btn-img"
-                  src="./assets/img/products/cards-img/add.png"
-                  alt="cart icon"
-                />
-              </button>
-            </div>
-
-            <div class="product-card hide-card">
-              <img
-                class="product-card-img"
-                src="./assets/img/products/cards-img/perifericos.png"
-                alt="Imagen de Perifericos"
-              />
-              <div class="product-card-info">
-                <p class="card-title">KIT GAMER LOGITECH</p>
-                <span class="card-price">$45.728</span>
-              </div>
-              <button class="add-to-cart-btn">
-                AGREGAR<img
-                  class="add-btn-img"
-                  src="./assets/img/products/cards-img/add.png"
-                  alt="cart icon"
-                />
-              </button>
-            </div> -->
+          <h2 class="products-info-title">- CATALOGO DE PRODUCTOS -</h2>
+          <div class="filter-buttons">
+            <button class="filter-btn active">Todo</button>
+            <button class="filter-btn" data-category="procesadores">Procesadores</button>
+            <button class="filter-btn" data-category="motherboards">Motherboards</button>
+            <button class="filter-btn" data-category="graficas">Placas de Video</button>
+            <button class="filter-btn" data-category="memorias_ram">Memorias Ram</button>
+            <button class="filter-btn" data-category="almacenamiento">Almacenamiento</button>
+            <button class="filter-btn" data-category="fuentes">Fuentes de Alimentacion</button>
           </div>
-          <div class="product-info-bottom">
+
+          <div class="products-card-container">           
+            <!-- Aqui se van a mostrar las cards precargadas y las filtradas -->
+          </div>
+          <button class="btn-showmore">Ver Más</button>
+          <!-- <div class="product-info-bottom">
             <a class="catalogo-btn" href="./pages/catalogo.html"
               >MIRA NUESTRO CATALOGO
               <img
@@ -275,7 +213,7 @@
               respaldados por las marcas líderes en la industria. Estamos aquí
               para ayudarte a llevar tus ideas al siguiente nivel.
             </p>
-          </div>
+          </div> -->
         </div>
 
         <div class="sponsors-info">
@@ -419,8 +357,9 @@
       </div>
     </footer>
 
-    <script src="./data/index.js"></script>
-    <script src="./data/db.js"></script>
+    
+    <script src="data/db.js"></script>
+    <script src="data/index.js"></script>
     
   </body>
 </html>
