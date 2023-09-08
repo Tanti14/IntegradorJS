@@ -13,7 +13,24 @@ const blurOverlay = document.querySelector(".blur-overlay"); /* Efecto de desenf
 const filterBtnContainer = document.querySelector(".filter-buttons"); /* CategoriesContainer */
 const filterButtons = document.querySelectorAll(".filter-btn"); /* Categories List (Botones) */
 const showMoreBtn = document.querySelector(".btn-showmore");
-const successModal = document.querySelector(".add-modal");
+/* const successModal = document.querySelector(".add-modal"); */
+const loaderSpinnerContainer = document.querySelector("#contenedor-carga")
+
+/* Creo la funcion del loader */
+
+/* const pageLoader = () => {
+  loaderSpinnerContainer.style.visibility = 'hidden';
+  loaderSpinnerContainer.style.opacity = '0';
+} */
+
+window.onload = () => {
+  const load = () => {
+    loaderSpinnerContainer.style.visibility = 'hidden';
+    loaderSpinnerContainer.style.opacity = '0';
+  }
+  setTimeout(load, 1000)
+}
+
 
 /* Creamos el carrito en el local storage */
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -69,11 +86,9 @@ const loadMoreProducts = () => {
 const toggleShowMorebtn = () => {
   if (!appState.activeFilter) {
     showMoreBtn.style.display = "block";
-    // showMoreBtn.classList.remove("hidden")
     return;
   }
   showMoreBtn.style.display = "none";
-  // showMoreBtn.classList.add("hidden")
 };
 
 
@@ -188,22 +203,22 @@ const closeOutsideClick = () => {
 
 // Crear card de producto en el carrito
 const createCartItemCard = (cartProduct) => {
-  const { id, productName, precio, img, cantidad } = cartProduct;
-  console.log(productName);
+  const { id, name, precio, img, cantidad } = cartProduct;
   return `<div class="cart-item">
   <img
     src='${img}'
     alt="Cart item icon"
   />
-  <div class="item-info">
-    <h3 class="item-title">${productName}</h3>
-    <span class="item-price">$${precio}</span>
-  </div>
-
-  <div class="item-counter">
-    <span class="quantity-handler down" data-id="${id}">-</span>
-    <span class="item-quantity">${cantidad}</span>
-    <span class="quantity-handler up" data-id="${id}">+</span>
+  <div class="item-card-top">
+    <h3 class="item-title">${name}</h3>
+    <div class="item-card-bottom">
+      <span class="item-price">$${precio}</span>
+      <div class="item-counter">
+        <span class="quantity-handler down" data-id="${id}">-</span>
+        <span class="item-quantity">${cantidad}</span>
+        <span class="quantity-handler up" data-id="${id}">+</span>
+      </div>
+    </div>
   </div>
 </div>`;
 }
@@ -219,8 +234,13 @@ const renderCart = () => {
 
 // Funcion para obtener el total de la compra
 
-const sumarTotalCarrito = () => {
+/* const sumarTotalCarrito = () => {
   return cart.reduce((acc, current) => acc + Number(current.precio) * current.cantidad, 0);
+} */
+
+const sumarTotalCarrito = () => {
+ let valor = cart.reduce((acc, current) => acc + Number(current.precio) * current.cantidad, 0);
+ return valor;
 }
 
 // Funcion para mostrar el total de la compra
@@ -255,9 +275,9 @@ const updateCartState = () => {
 }
 
 // Funcion para crear un objeto con la informacion del producto a agregar del carrito
-const createProductData = ({id, productName, precio, img}) => {
-  return {id, productName, precio, img};
-  
+const createProductData = ({id, name, precio, img}) => {
+  console.log(name);
+  return {id, name, precio, img};
 };
 
 // Funcion para saber si cierto producto ya esta en el carrito
@@ -276,7 +296,7 @@ const createCartProduct = (product) => {
 }
 
 
-// Funcion para mostrar el cartel de operacion exitosa al agregar un producto (Show Modal)
+// Funcion para mostrar el cartel de operacion exitosa al agregar un producto (Show Modal - No la uso creo)
 const showSuccessAlert = (msg) => {
   successModal.classList.add("active-modal")
   successModal.textContent = msg
@@ -409,6 +429,7 @@ const deleteCart = () => {
 }
 
 const init = () => {
+/*   loaderSpinnerContainer.addEventListener("load", pageLoader) */
   renderProductCards(appState.products[0])
   showMoreBtn.addEventListener("click", loadMoreProducts)
   filterBtnContainer.addEventListener("click", applyFilter)

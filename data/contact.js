@@ -4,6 +4,17 @@ const lastNameInput = document.getElementById("lastName");
 const emailInput = document.getElementById("email");
 const asuntoInput = document.getElementById("asunto");
 const txtAreaInput = document.getElementById("message");
+const loaderSpinnerContainer = document.querySelector("#contenedor-carga")
+
+/* Loader */
+
+window.onload = () => {
+  const load = () => {
+    loaderSpinnerContainer.style.visibility = 'hidden';
+    loaderSpinnerContainer.style.opacity = '0';
+  }
+  setTimeout(load, 1000)
+}
 
 // =====================================================================
 // Verificaciones
@@ -170,12 +181,23 @@ const validateForm = (e) => {
     isTxtAreaValid;
 
   if (isValidForm) {
-    alert(
-      "Su mensaje ha sido enviado con Exito. Nos comunicaremos lo antes posible."
-    );
-    setTimeout(goToMain, 500)
+    Swal.fire({
+      title: '¡Operacion Exitosa!',
+      text: 'Su mensaje ha sido enviado con Exito. Nos comunicaremos lo antes posible',
+      icon: 'success',
+      showConfirmButton: false,
+      timer: 2000,
+    });
+    setTimeout(goToMain, 2500)
+    
   } else {
-    alert("Complete los campos para poder enviar su ticket.")
+    Swal.fire({
+      title: '¡Oops, algo no ha salido bien! ',
+      text: 'Complete los campos para poder enviar su ticket.',
+      icon: 'error',
+      showConfirmButton: false,
+      timer: 2000,
+    });
   }
 };
 

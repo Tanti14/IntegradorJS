@@ -138,7 +138,7 @@ const productsData = [
   {
     id: 19,
     productName:
-      "Memoria Adata DDR4 16GB (2x8GB) 4133MHz XPG Spectrix D60G RGB",
+      "Memoria Adata XPG Spectrix D60G RGB DDR4 16GB (2x8GB) 4133MHz",
     precio: 121416,
     categoria: "memorias_ram",
     img: "/data/db-img/ram/xpg-adata-ddr4-4133mhz.png",
@@ -154,10 +154,10 @@ const productsData = [
   {
     id: 21,
     productName:
-      "Memoria GeiL DDR4 16GB (2x8GB) 3000MHz EVO SPEAR Phantom Gaming Edition",
+      "Memoria Geil Evo Potenza Red 16GB (2x8GB) 3000Mhz",
     precio: 91042,
     categoria: "memorias_ram",
-    img: "/data/db-img/ram/geil-ddr4-16gb-2x8GB-3000mhz.png",
+    img: "/data/db-img/ram/memoria-ddr4-geil-evo-potenza-16gb-2x8gb-3000mhz-red.png",
   },
   // Almacenamiento
   {
@@ -177,7 +177,7 @@ const productsData = [
   {
     id: 24,
     productName:
-      "Disco Solido SSD M.2 WD 500GB Black SN850 7000MB/s NVMe Gen4 PCI-E x4",
+      "Disco Solido SSD M.2 WD 500GB Black SN850 NVMe",
     precio: 151628,
     categoria: "almacenamiento",
     img: "/data/db-img/almacenamiento/wd-black-sn850-nvme-ssd.png",
