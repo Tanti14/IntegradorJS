@@ -1,4 +1,4 @@
-const productsData = [
+export const productsData = [
   // Tarjetas Graficas
   {
     id: 1,
@@ -221,7 +221,7 @@ const divideProductsInParts = (size) => {
   return productsList;
 };
 
-const appState = {
+export const appState = {
   products: divideProductsInParts(6),
   currentIndex: 0,
   productLimit: divideProductsInParts(6).length,

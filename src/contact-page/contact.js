@@ -7,7 +7,6 @@ const txtAreaInput = document.getElementById("message");
 const loaderSpinnerContainer = document.querySelector("#contenedor-carga")
 
 /* Loader */
-
 window.onload = () => {
   const load = () => {
     loaderSpinnerContainer.style.visibility = 'hidden';
@@ -35,14 +34,13 @@ const isValidMail = (input) => {
   const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
   return re.test(input.value.trim());
 };
-// ======================================================================
 
+// ======================================================================
 const showError = (input, message) => {
   const formField = input.parentElement;
   input.classList.remove("noerror");
   input.classList.add("error");
   const error = formField.querySelector(".msg");
-  /* error.style.display = "block"; */
   error.textContent = message;
 };
 
@@ -51,13 +49,11 @@ const showNoError = (input) => {
   input.classList.add("noerror");
   input.classList.remove("error");
   const error = formField.querySelector(".msg");
-  /* error.style.display = "block"; */
   error.textContent = "";
 };
 
 // =========================================================================
 // Validacion de inputs
-
 // Validacion Input Name y LastName
 const checkCompleteName = (input) => {
   let valid = false;
@@ -86,8 +82,8 @@ const checkCompleteName = (input) => {
   valid = true;
   return valid;
 };
-// =========================================================================
 
+// =========================================================================
 // Validacion Input Email
 const checkEmail = (input) => {
   let valid = false;
@@ -106,8 +102,8 @@ const checkEmail = (input) => {
   valid = true;
   return valid;
 };
-// =========================================================================
 
+// =========================================================================
 // Validacion Input Asunto
 const checkAsuntoInput = (input) => {
   let valid = false;
@@ -131,8 +127,8 @@ const checkAsuntoInput = (input) => {
   valid = true;
   return valid;
 };
-// =========================================================================
 
+// =========================================================================
 // Validacion Text Area
 const checkTxtAreaInput = (input) => {
   let valid = false;
@@ -159,7 +155,6 @@ const checkTxtAreaInput = (input) => {
 // =========================================================================
 
 // =========================================================================
-
 const validateForm = (e) => {
   e.preventDefault();
 
@@ -204,9 +199,7 @@ const validateForm = (e) => {
 const init = () => {
   contactForm.addEventListener("submit", validateForm);
   nameInput.addEventListener("input", () => checkCompleteName(nameInput));
-  lastNameInput.addEventListener("input", () =>
-    checkCompleteName(lastNameInput)
-  );
+  lastNameInput.addEventListener("input", () => checkCompleteName(lastNameInput));
   emailInput.addEventListener("input", () => checkEmail(emailInput));
   asuntoInput.addEventListener("input", () => checkAsuntoInput(asuntoInput));
   txtAreaInput.addEventListener("input", () => checkTxtAreaInput(txtAreaInput));
