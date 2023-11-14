@@ -730,6 +730,34 @@ body::-webkit-scrollbar{
   opacity: 0.8;
 }
 
+.product-info-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 50px;
+}
+
+.catalogo-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid white;
+  background: white;
+  color: black;
+  width: 240px;
+  padding: 10px;
+}
+
+.catalogo-btn-img {
+  width: 20px;
+}
+
+.product-info-text {
+  width: 40%;
+  text-align: justify;
+}
+
 .btn-showmore {
   padding: 5px 10px;
   color: black;
